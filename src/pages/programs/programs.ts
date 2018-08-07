@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddProgramPage } from '../add-program/add-program';
+import { ProgramDetailsPage } from '../program-details/program-details';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
@@ -43,7 +44,10 @@ export class ProgramsPage {
     return ref.getDownloadURL();
   }
 
-  navigateToDetail(id) {
-
+  navigateToDetail(program) {
+    this.navCtrl.push(ProgramDetailsPage, {
+      programImage: this.imageUrlList[program.image],
+      program: program
+    });
   }
 }

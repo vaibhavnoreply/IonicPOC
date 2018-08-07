@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
-import { Observable } from 'rxjs/Observable';
 
 export interface Program { id: string, name: string; description: string; image: string; }
 
