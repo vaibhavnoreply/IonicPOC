@@ -25,6 +25,9 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 //Import calendar module
 import { NgCalendarModule  } from 'ionic2-calendar';
 
+//Import FCM Module
+import { FCM } from '@ionic-native/fcm';
+
 // AF2 Settings
 export const firebaseConfig = {
   apiKey: "AIzaSyCTn3hmLU6SmLZnpb9rsvqTokX8HVZoB7w",
@@ -32,7 +35,7 @@ export const firebaseConfig = {
   databaseURL: "https://sampleprojectfb.firebaseio.com",
   storageBucket: "sampleprojectfb.appspot.com",
   messagingSenderId: "1069592166373",
-   projectId: "sampleprojectfb"
+  projectId: "sampleprojectfb"
 };
 
 @NgModule({
@@ -71,9 +74,10 @@ export const firebaseConfig = {
     AddEventModalComponent
   ],
   providers: [
+    FCM,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

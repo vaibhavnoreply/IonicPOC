@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController, ActionSheetController, ModalController } from 'ionic-angular';
 import { AddEventModalComponent } from './add-event-modal/add-event-modal';
+import { AngularFireStorage } from 'angularfire2/storage';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import moment from 'moment';
+
+export interface EventData { id: string, title: string, notes: string; startTime: string; endTime: string; }
 
 @Component({
   selector: 'page-calendar',
@@ -22,10 +28,28 @@ export class CalendarPage {
     mode: this.calendarModes[0].key,
     currentDate: new Date()
   }; // these are the variable used by the calendar.
+
+  eventList: Observable<EventData[]>;
+  eventCollection: AngularFirestoreCollection<EventData>;
+
   constructor(public navCtrl: NavController,
     private actionSheetCtrl: ActionSheetController,
-    private modalCtrl: ModalController) {
-
+    private modalCtrl: ModalController,
+    public afStorage: AngularFireStorage,
+    public afDatabase: AngularFirestore) {
+      const tempArray= [];
+    this.eventCollection = afDatabase.collection<EventData>('events');
+    this.eventList = this.eventCollection.valueChanges();
+    this.eventList.forEach(function(events) {
+      events.forEach(function(event) {
+        let tempStartTime = moment(event.startTime);
+        let tempEndTime = moment(event.endTime);
+        event.startTime = tempStartTime._d;
+        event.endTime = tempEndTime._d;
+        tempArray.push(event);
+      });
+    });
+    this.eventSource = tempArray;
     // this.markDisabled(new Date(2017, 12, 25))
   }
 
@@ -118,6 +142,7 @@ export class CalendarPage {
     modal.present();
     modal.onDidDismiss(data => {
       if (data) {
+        console.log(data, "data")
         let eventData = data;
 
         eventData.startTime = new Date(data.startTime);
@@ -128,6 +153,7 @@ export class CalendarPage {
         this.eventSource = [];
         setTimeout(() => {
           this.eventSource = events;
+          console.log(this.eventSource, "this.eventSource")
         });
       }
     });
