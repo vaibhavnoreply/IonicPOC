@@ -1,25 +1,68 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { ProgramsPage } from '../pages/programs/programs';
+import { VideoPage } from '../pages/video/video';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { ProgramDetailsPage } from '../pages/program-details/program-details';
+import { AddProgramPage } from '../pages/add-program/add-program';
+import { EditProgramPage } from '../pages/edit-program/edit-program';
+import { AddVideoPage } from '../pages/add-video/add-video';
+import { PlayVideoPage } from '../pages/play-video/play-video';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+
+// Import the AF2 Module
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyCTn3hmLU6SmLZnpb9rsvqTokX8HVZoB7w",
+  authDomain: "sampleprojectfb.firebaseapp.com",
+  databaseURL: "https://sampleprojectfb.firebaseio.com",
+  storageBucket: "sampleprojectfb.appspot.com",
+  messagingSenderId: "1069592166373",
+   projectId: "sampleprojectfb"
+};
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    ProgramsPage,
+    VideoPage,
+    CalendarPage,
+    ProgramDetailsPage,
+    AddProgramPage,
+    EditProgramPage,
+    AddVideoPage,
+    PlayVideoPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireStorageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    ProgramsPage,
+    VideoPage,
+    CalendarPage,
+    ProgramDetailsPage,
+    AddProgramPage,
+    EditProgramPage,
+    AddVideoPage,
+    PlayVideoPage
   ],
   providers: [
     StatusBar,

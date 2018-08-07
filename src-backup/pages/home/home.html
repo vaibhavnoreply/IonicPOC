@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+       Demo POC
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-buttons end>
+  <button ion-button icon-only (click)="addSong()">
+    <ion-icon name="add"></ion-icon>
+  </button>
+</ion-buttons>
+
+<ion-list>
+  <ion-item *ngFor="let song of songsList | async">
+    {{song.title}}
+  </ion-item>
+</ion-list>
+
+<ion-item *ngFor="let song of songsList | async" (click)="showOptions(song.id, song.title)">
+
+<ion-content padding>
+  <button ion-button (click) ="curdDemo()" color="secondary" round full>Crud Demo</button>
+  <button ion-button (click) ="calanderDemo()" color="secondary" round full>Calander Demo</button>
+  <button ion-button (click) ="videoDemo()" color="secondary" round full>Video Demo</button>
+  <button ion-button (click) ="offlineDemo()" color="secondary" round full>Offline Demo</button>
+</ion-content>

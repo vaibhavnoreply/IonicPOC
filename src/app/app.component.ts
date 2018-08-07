@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { VideoPage } from '../pages/video/video';
+import { CalendarPage } from '../pages/calendar/calendar';
+
+
+import { ProgramsPage } from '../pages/programs/programs';
+
+
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  @ViewChild(Nav) navCtrl: Nav;
+    rootPage:any = ProgramsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
@@ -18,5 +26,14 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+  goToPrograms(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(ProgramsPage);
+  }goToVideo(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(VideoPage);
+  }goToCalendar(params){
+    if (!params) params = {};
+    this.navCtrl.setRoot(CalendarPage);
+  }
 }
-

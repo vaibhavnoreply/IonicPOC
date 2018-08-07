@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Add Program
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">
+  <form id="addProgram-form1" (ngSubmit)="uploadProgram()">
+    <ion-item id="addProgram-input2">
+      <ion-label stacked>
+        Program Name
+      </ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="newProgram.name" name="name"></ion-input>
+    </ion-item>
+    <ion-item id="addProgram-input5">
+      <ion-label stacked>
+        Image
+      </ion-label>
+      <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input>
+    </ion-item>
+    <ion-item id="addProgram-textarea1">
+      <ion-label>
+        Program Description
+      </ion-label>
+      <ion-textarea placeholder="" [(ngModel)]="newProgram.description" name="description"></ion-textarea>
+    </ion-item>
+    <button id="addProgram-button3" ion-button outline color="positive" block type="submit">
+      Submit
+    </button>
+  </form>
+</ion-content>

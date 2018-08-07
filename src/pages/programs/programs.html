@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Programs
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="addProgram()" ion-button icon-only>
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1">
+  <ion-card id="programs-card21" *ngFor="let program of programList | async" (click)="navigateToDetail(program.id)">
+    <ion-list>
+      <img [src]="imageUrlList[program.image] | async" />
+      <ion-item color="none" id="programs-list-item9">
+        {{program.name}}
+        <ion-icon name="arrow-forward" item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
