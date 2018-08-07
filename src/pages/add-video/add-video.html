@@ -9,27 +9,27 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page8">
-  <form id="addVideo-form4">
+  <form id="addVideo-form4" (ngSubmit)="uploadVideo()">
     <ion-item id="addVideo-input10">
       <ion-label stacked>
         Title
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" placeholder="" [(ngModel)]="newVideo.title" name="title"></ion-input>
     </ion-item>
     <ion-item id="addVideo-textarea3">
-      <ion-label>
+      <ion-label stacked>
         Description
       </ion-label>
-      <ion-textarea placeholder=""></ion-textarea>
+      <ion-textarea placeholder="" [(ngModel)]="newVideo.description" name="description"></ion-textarea>
     </ion-item>
     <ion-item id="addVideo-input12">
       <ion-label stacked>
         Video Url
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" placeholder="" [(ngModel)]="newVideo.url" name="url"></ion-input>
     </ion-item>
+    <button id="addVideo-button5" ion-button outline color="positive" block type="submit" style="border-radius:1px 1px 1px 1px;">
+      Submit
+    </button>
   </form>
-  <button id="addVideo-button5" ion-button outline color="positive" block style="border-radius:1px 1px 1px 1px;">
-    Submit
-  </button>
 </ion-content>

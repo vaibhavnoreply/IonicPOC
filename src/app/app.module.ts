@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 import { ProgramsPage } from '../pages/programs/programs';
 import { VideoPage } from '../pages/video/video';
 import { CalendarPage } from '../pages/calendar/calendar';
+import { AddEventModalComponent } from '../pages/calendar/add-event-modal/add-event-modal';
 import { ProgramDetailsPage } from '../pages/program-details/program-details';
 import { AddProgramPage } from '../pages/add-program/add-program';
 import { EditProgramPage } from '../pages/edit-program/edit-program';
@@ -21,6 +22,8 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 
+//Import calendar module
+import { NgCalendarModule  } from 'ionic2-calendar';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -42,7 +45,8 @@ export const firebaseConfig = {
     AddProgramPage,
     EditProgramPage,
     AddVideoPage,
-    PlayVideoPage
+    PlayVideoPage,
+    AddEventModalComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,8 @@ export const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    NgCalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -62,7 +67,8 @@ export const firebaseConfig = {
     AddProgramPage,
     EditProgramPage,
     AddVideoPage,
-    PlayVideoPage
+    PlayVideoPage,
+    AddEventModalComponent
   ],
   providers: [
     StatusBar,
