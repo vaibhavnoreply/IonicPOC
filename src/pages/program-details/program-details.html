@@ -18,7 +18,7 @@
       {{program.description}}
     </p>
   </div>
-  <button id="programDetails-button1" ion-button outline color="positive" block small>
+  <button id="programDetails-button1" ion-button outline color="positive" block small (click)="editProgram(program.id)">
     Edit
   </button>
   <button id="programDetails-button2" ion-button outline color="dark" block small (click)="deleteProgram(program.id)">

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { EditProgramPage } from '../edit-program/edit-program';
+import {AddProgramPage} from "../add-program/add-program";
 
 export interface Program { id:string, name: string; description: string; image: string; }
 
@@ -20,6 +22,11 @@ export class ProgramDetailsPage {
     this.program = navParams.get("program");
   }
 
+  editProgram() {
+    this.navCtrl.push(EditProgramPage, {
+      program: this.program
+    });
+  }
 
   deleteProgram(programId) {
     console.log(programId);
