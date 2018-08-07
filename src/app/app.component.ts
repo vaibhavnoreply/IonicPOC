@@ -8,6 +8,7 @@ import { CalendarPage } from '../pages/calendar/calendar';
 
 
 import { ProgramsPage } from '../pages/programs/programs';
+import { timer } from 'rxjs/observable/timer';
 
 
 
@@ -15,15 +16,18 @@ import { ProgramsPage } from '../pages/programs/programs';
   templateUrl: 'app.html'
 })
 export class MyApp {
+  showSplash = true;
   @ViewChild(Nav) navCtrl: Nav;
-    rootPage:any = ProgramsPage;
+  rootPage:any = ProgramsPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+        this.splashScreen.show();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+      timer(3000).subscribe(() => this.showSplash = false)
     });
   }
   goToPrograms(params){
