@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddVideoPage } from '../add-video/add-video';
+import { PlayVideoPage } from '../play-video/play-video';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase';
 
 export interface Video { id: string, title: string; description: string; url: string; }
 
@@ -19,7 +21,7 @@ export class VideoPage {
     this.videoCollection = afDatabase.collection<Video>('videos');
     this.videoList = this.videoCollection.valueChanges();
     this.videoUrls = {};
-    
+
     this.populateThumbnailUrls();
   }
 
@@ -37,4 +39,14 @@ export class VideoPage {
   addVideo() {
     this.navCtrl.push(AddVideoPage);
   }
+
+  playVideo(url) {
+    this.navCtrl.push(PlayVideoPage, {
+      data: url
+    });
+  }
+  deleteVideo(key) {
+    this.videoCollection.doc(key).delete();
+  }
+
 }

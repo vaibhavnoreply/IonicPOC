@@ -9,27 +9,27 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page7">
-  <form id="editProgram-form2">
+  <form id="editProgram-form2" (ngSubmit)="uploadProgram()">
     <ion-item id="editProgram-input6">
       <ion-label stacked>
         Program Name
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" [(ngModel)]="program.name" placeholder="" name="name"></ion-input>
     </ion-item>
     <ion-item id="editProgram-input7">
       <ion-label stacked>
         Image
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input>
     </ion-item>
     <ion-item id="editProgram-textarea2">
       <ion-label>
         Program Description
       </ion-label>
-      <ion-textarea placeholder=""></ion-textarea>
+      <ion-textarea placeholder="" [(ngModel)]="program.description" name="description"></ion-textarea>
     </ion-item>
+    <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
+      Submit
+    </button>
   </form>
-  <button id="editProgram-button4" ion-button outline color="positive" block>
-    Submit
-  </button>
 </ion-content>

@@ -14,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page1">
-  <ion-card id="programs-card21" *ngFor="let program of programList | async" (click)="navigateToDetail(program.id)">
+  <ion-card id="programs-card21" *ngFor="let program of programList | async" (click)="navigateToDetail(program)">
     <ion-list>
       <img [src]="imageUrlList[program.image] | async" />
       <ion-item color="none" id="programs-list-item9">

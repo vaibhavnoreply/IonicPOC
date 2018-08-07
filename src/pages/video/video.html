@@ -18,7 +18,7 @@
     <ion-item-sliding *ngFor="let video of videoList | async">
       <ion-item color="none" id="video-list-item18">
         <ion-thumbnail item-left>
-          <img [src]="videoUrls[video.id]" />
+          <img [src]="videoUrls[video.id]" (click)="playVideo(video.url)"/>
         </ion-thumbnail>
         <h2>
           {{video.title}}
@@ -28,7 +28,7 @@
         </p>
       </ion-item>
       <ion-item-options side="left">
-        <button ion-button color="assertive">
+        <button ion-button color="assertive" (click)="deleteVideo(video.id)">
           Delete
         </button>
         <button ion-button color="positive"></button>
