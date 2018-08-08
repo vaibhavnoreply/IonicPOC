@@ -17,16 +17,16 @@
       <ion-input type="text" [(ngModel)]="program.name" placeholder="" name="name"></ion-input>
     </ion-item>
     <ion-item id="editProgram-input7">
-      <ion-label stacked>
+      <ion-label>
         Image
       </ion-label>
       <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input>
     </ion-item>
     <ion-item id="editProgram-textarea2">
-      <ion-label>
+      <!-- <ion-label>
         Program Description
-      </ion-label>
-      <ion-textarea placeholder="" [(ngModel)]="program.description" name="description"></ion-textarea>
+      </ion-label> -->
+      <ion-textarea placeholder="Program Description" [(ngModel)]="program.description" name="description"></ion-textarea>
     </ion-item>
     <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
       Submit

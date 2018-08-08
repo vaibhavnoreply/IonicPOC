@@ -16,14 +16,21 @@
       </ion-label>
       <ion-input type="text" placeholder="" [(ngModel)]="newProgram.name" name="name"></ion-input>
     </ion-item>
-    <ion-item id="addProgram-input5">
-      <ion-label stacked>
-        Image
-      </ion-label>
-      <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input>
-    </ion-item>
+
+        <label for="fileInput" icon-only ion-button style="
+        padding: 5px;
+        min-width: .9em;
+        margin: 25px 0px 10px 0px;
+        border-radius: 0px;
+        box-shadow: none;">
+          <ion-icon name="camera"></ion-icon>
+          <input type="file" (change)="uploadFile($event)" name="image" />
+        </label>
+
+    <!-- <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input> -->
+
     <ion-item id="addProgram-textarea1">
-      <ion-label>
+      <ion-label stacked>
         Program Description
       </ion-label>
       <ion-textarea placeholder="" [(ngModel)]="newProgram.description" name="description"></ion-textarea>
