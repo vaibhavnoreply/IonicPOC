@@ -42,11 +42,10 @@ export class CalendarPage {
     this.eventList = this.eventCollection.valueChanges();
     this.eventList.forEach(function(events) {
       events.forEach(function(event) {
-        let tempStartTime = moment(event.startTime);
-        let tempEndTime = moment(event.endTime);
-        console.log(tempEndTime,"tempEndTime")
-        event.startTime = tempStartTime.format();
-        event.endTime = tempEndTime.format();
+        let tempStartTime = new Date(event.startTime);
+        let tempEndTime = new Date(event.endTime);
+        event.startTime = tempStartTime;
+        event.endTime = tempEndTime;
         tempArray.push(event);
       });
     });
