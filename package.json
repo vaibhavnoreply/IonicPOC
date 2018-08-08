@@ -35,12 +35,15 @@
     "cordova-plugin-ionic-webview": "^2.0.2",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-support-google-services": "^1.1.0",
     "firebase": "^5.3.1",
     "intl": "^1.2.5",
     "ionic-angular": "3.9.2",
     "ionic2-calendar": "^0.4.4",
     "ionicons": "3.0.0",
     "moment": "^2.22.2",
+    "phonegap-plugin-multidex": "^1.0.0",
+    "phonegap-plugin-push": "^2.2.3",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.2.2",
     "sw-toolbox": "3.6.0",
@@ -58,7 +61,11 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-fcm-with-dependecy-updated": {}
+      "cordova-plugin-fcm-with-dependecy-updated": {},
+      "phonegap-plugin-push": {
+        "ANDROID_SUPPORT_V13_VERSION": "27.+",
+        "FCM_VERSION": "11.6.2"
+      }
     },
     "platforms": [
       "android"

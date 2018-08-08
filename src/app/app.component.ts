@@ -26,6 +26,7 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
   goToPrograms(params){
     if (!params) params = {};
     this.navCtrl.setRoot(ProgramsPage);

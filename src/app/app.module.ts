@@ -27,6 +27,8 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 
 //Import FCM Module
 import { FCM } from '@ionic-native/fcm';
+import { FcmProvider } from '../providers/fcm/fcm';
+import { HttpClientModule } from '@angular/common/http';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -58,7 +60,8 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
     AngularFireStorageModule,
-    NgCalendarModule
+    NgCalendarModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,10 +77,11 @@ export const firebaseConfig = {
     AddEventModalComponent
   ],
   providers: [
-    FCM,
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    FcmProvider,
+    FCM
   ]
 })
 export class AppModule { }

@@ -17,7 +17,11 @@ export class ProgramsPage {
   programList: Observable<Program[]>;
   imageUrlList: {};
 
-  constructor(public navCtrl: NavController, public afStorage: AngularFireStorage, public afDatabase: AngularFirestore) {
+  constructor(
+    public navCtrl: NavController,
+    public afStorage: AngularFireStorage,
+    public afDatabase: AngularFirestore
+  ) {
     this.programCollection = afDatabase.collection<Program>('programs');
     this.programList = this.programCollection.valueChanges();
     this.imageUrlList = {};
