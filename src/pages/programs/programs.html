@@ -14,13 +14,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page1">
-  <ion-card id="programs-card21" *ngFor="let program of programList | async" (click)="navigateToDetail(program)">
-    <ion-list>
-      <img [src]="imageUrlList[program.image] | async" />
-      <ion-item color="none" id="programs-list-item9">
-        {{program.name}}
-        <ion-icon name="arrow-forward" item-right></ion-icon>
-      </ion-item>
-    </ion-list>
-  </ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-3 col-12 col-sm-6 col-xs-6 col-lg-4 *ngFor="let program of programList | async" (click)="navigateToDetail(program)">
+        <ion-card id="programs-card21">
+          <ion-list>
+            <img [src]="imageUrlList[program.image] | async" />
+            <ion-item color="none" id="programs-list-item9">
+              {{program.name}}
+              <ion-icon name="arrow-forward" item-right></ion-icon>
+            </ion-item>
+          </ion-list>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
