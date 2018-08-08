@@ -12,16 +12,24 @@
   <h2 id="programDetails-heading1" style="color:#000000;">
     {{program.name}}
   </h2>
-  <img [src]="programImage | async" class="programDetail-img"/>
+  <img [src]="programImage | async" class="programDetail-img" onerror="src='assets/img/placeholder-image.png'" alt="no-image" />
   <div id="programDetails-markdown1" class="show-list-numbers-and-dots">
     <p style="color:#000000;">
       {{program.description}}
     </p>
   </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-4 col-12 offset-md-3>
   <button id="programDetails-button1" ion-button outline color="positive" block small (click)="editProgram(program.id)">
     Edit
   </button>
+  </ion-col>
+  <ion-col col-md-4 col-12>
   <button id="programDetails-button2" ion-button outline color="dark" block small (click)="deleteProgram(program.id)">
     Delete
   </button>
+  </ion-col>
+ </ion-row>
+</ion-grid>
 </ion-content>

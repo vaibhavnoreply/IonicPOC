@@ -9,6 +9,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page7">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 col-12 offset-md-3>
   <form id="editProgram-form2" (ngSubmit)="uploadProgram()">
     <ion-item id="editProgram-input6">
       <ion-label stacked>
@@ -24,8 +27,7 @@
     </ion-item> -->
 
     <label for="fileInput" icon-only ion-button style="
-    padding: 5px;
-    min-width: .9em;
+    min-width: 100%;
     margin: 25px 0px 10px 0px;
     border-radius: 0px;
     box-shadow: none;">
@@ -42,5 +44,8 @@
     <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
       Submit
     </button>
-  </form>
+    </form>
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

@@ -18,7 +18,7 @@
     <ion-item-sliding *ngFor="let video of videoList | async">
       <ion-item color="none" id="video-list-item18">
         <ion-thumbnail item-left>
-          <img [src]="videoUrls[video.id]" (click)="playVideo(video.url)"/>
+          <img [src]="videoUrls[video.id]" (click)="playVideo(video.url)" onerror="src='assets/img/placeholder-image.png'" alt="no-image" />
         </ion-thumbnail>
         <h2>
           {{video.title}}

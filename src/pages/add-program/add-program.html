@@ -9,17 +9,19 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page5">
-  <form id="addProgram-form1" (ngSubmit)="uploadProgram()">
-    <ion-item id="addProgram-input2">
-      <ion-label stacked>
-        Program Name
-      </ion-label>
-      <ion-input type="text" placeholder="" [(ngModel)]="newProgram.name" name="name"></ion-input>
-    </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-md-6 col-12 offset-md-3>
+        <form id="addProgram-form1" (ngSubmit)="uploadProgram()">
+          <ion-item id="addProgram-input2">
+            <ion-label stacked>
+              Program Name
+            </ion-label>
+            <ion-input type="text" placeholder="" [(ngModel)]="newProgram.name" name="name"></ion-input>
+          </ion-item>
 
-        <label for="fileInput" icon-only ion-button style="
-        padding: 5px;
-        min-width: .9em;
+          <label for="fileInput" icon-only ion-button style="
+        min-width: 100%;
         margin: 25px 0px 10px 0px;
         border-radius: 0px;
         box-shadow: none;">
@@ -27,16 +29,19 @@
           <input type="file" (change)="uploadFile($event)" name="image" />
         </label>
 
-    <!-- <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input> -->
+          <!-- <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input> -->
 
-    <ion-item id="addProgram-textarea1">
-      <ion-label stacked>
-        Program Description
-      </ion-label>
-      <ion-textarea placeholder="" [(ngModel)]="newProgram.description" name="description"></ion-textarea>
-    </ion-item>
-    <button id="addProgram-button3" ion-button outline color="positive" block type="submit">
+          <ion-item id="addProgram-textarea1">
+            <ion-label stacked>
+              Program Description
+            </ion-label>
+            <ion-textarea placeholder="" [(ngModel)]="newProgram.description" name="description"></ion-textarea>
+          </ion-item>
+          <button id="addProgram-button3" ion-button outline color="positive" block type="submit">
       Submit
     </button>
-  </form>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

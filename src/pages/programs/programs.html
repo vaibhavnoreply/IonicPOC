@@ -19,7 +19,7 @@
       <ion-col col-md-3 col-12 col-sm-6 col-xs-6 col-lg-4 *ngFor="let program of programList | async" (click)="navigateToDetail(program)">
         <ion-card id="programs-card21">
           <ion-list>
-            <img [src]="imageUrlList[program.image] | async" onerror="this.src='src/assets/img/placeholder-image.png'" alt="no-image"/>
+            <img [src]="imageUrlList[program.image] | async" onerror="src='assets/img/placeholder-image.png'" alt="no-image" />
             <ion-item color="none" id="programs-list-item9">
               {{program.name}}
               <ion-icon name="arrow-forward" item-right></ion-icon>
