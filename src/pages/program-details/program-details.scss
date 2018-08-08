@@ -9,6 +9,7 @@ page-program-details {
   object-fit: cover;
   margin-left:auto;
   margin-right:auto;
+  background-color: #ccc;
 }
 
 .show-list-numbers-and-dots p {
@@ -18,4 +19,14 @@ page-program-details {
   line-height: 1.5;
   letter-spacing: 1px;
   text-align: inherit;
+}
+
+.item-md.item-block .item-inner {
+    border-bottom: 1px solid #ccc;
+    border-bottom-color: #ccc !important;
+    box-shadow: inset 0 -1px 0 0 #ccc !important;
+}
+
+label.disable-hover.button.button-md.button-default.button-default-md{
+  background-color: #2794dc;
 }
