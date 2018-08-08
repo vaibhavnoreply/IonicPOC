@@ -44,8 +44,9 @@ export class CalendarPage {
       events.forEach(function(event) {
         let tempStartTime = moment(event.startTime);
         let tempEndTime = moment(event.endTime);
-        event.startTime = tempStartTime._d;
-        event.endTime = tempEndTime._d;
+        console.log(tempEndTime,"tempEndTime")
+        event.startTime = tempStartTime.format();
+        event.endTime = tempEndTime.format();
         tempArray.push(event);
       });
     });
