@@ -21,6 +21,10 @@ page-add-program {
   margin-top: 30px;
 }
 
+#addVideo-button5 {
+  margin-top: 30px;
+}
+
 #addProgram-form1 {
   background: #fff;
   box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.18);
@@ -35,9 +39,37 @@ page-add-program {
   margin: 30px 0;
 }
 
-
+#addVideo-form4 {
+  background: #fff;
+  box-shadow: 0px 1px 6px 1px rgba(0, 0, 0, 0.18);
+  padding: 20px 20px;
+  margin: 30px 0;
+}
 input[type="file"] {
     width: 100%;
     font-size: 14px;
     font-weight: bold;
+}
+
+.toolbar-background-md {
+    border-color: #ccc;
+    background: #2794dc;
+}
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #fff;
+    background-color: transparent;
+}
+
+.toolbar-title-md {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.item-inner {
+  border-bottom-color: #cccccc59;
+  -webkit-box-shadow: inset 0 -1px 0 0 #cccccc59;
+  box-shadow: inset 0 -1px 0 0 #cccccc59;
 }
