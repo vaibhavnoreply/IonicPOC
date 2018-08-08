@@ -94,7 +94,6 @@ export class CalendarPage {
   };
 
   openActionSheet(event) {
-    console.log('opening');
     let actionsheet = this.actionSheetCtrl.create({
       title: "Choose Option",
       buttons: [
