@@ -16,17 +16,28 @@
       </ion-label>
       <ion-input type="text" [(ngModel)]="program.name" placeholder="" name="name"></ion-input>
     </ion-item>
-    <ion-item id="editProgram-input7">
+    <!-- <ion-item id="editProgram-input7">
       <ion-label>
         Image
       </ion-label>
       <ion-input type="file" placeholder="" (change)="uploadFile($event)" name="image"></ion-input>
-    </ion-item>
+    </ion-item> -->
+
+    <label for="fileInput" icon-only ion-button style="
+    padding: 5px;
+    min-width: .9em;
+    margin: 25px 0px 10px 0px;
+    border-radius: 0px;
+    box-shadow: none;">
+      <ion-icon name="camera"></ion-icon>
+      <input type="file" (change)="uploadFile($event)" name="image" />
+    </label>
+
     <ion-item id="editProgram-textarea2">
-      <!-- <ion-label>
+      <ion-label stacked>
         Program Description
-      </ion-label> -->
-      <ion-textarea placeholder="Program Description" [(ngModel)]="program.description" name="description"></ion-textarea>
+      </ion-label>
+      <ion-textarea placeholder="" [(ngModel)]="program.description" name="description"></ion-textarea>
     </ion-item>
     <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
       Submit
