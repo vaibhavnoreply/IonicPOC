@@ -146,7 +146,6 @@ export class CalendarPage {
     modal.present();
     modal.onDidDismiss(data => {
       if (data) {
-        console.log(data, "data")
         let eventData = data;
 
         eventData.startTime = new Date(data.startTime);
@@ -157,7 +156,6 @@ export class CalendarPage {
         this.eventSource = [];
         setTimeout(() => {
           this.eventSource = events;
-          console.log(this.eventSource, "this.eventSource")
         });
       }
     });
