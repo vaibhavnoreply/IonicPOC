@@ -12,32 +12,32 @@
   <ion-grid>
     <ion-row>
       <ion-col col-md-6 col-12 offset-md-3>
-  <form id="editProgram-form2" (ngSubmit)="uploadProgram()">
-    <ion-item id="editProgram-input6">
-      <ion-label stacked>
-        Program Name
-      </ion-label>
-      <ion-input type="text" [(ngModel)]="program.name" placeholder="" name="name"></ion-input>
-    </ion-item>
-    <label for="fileInput" icon-only ion-button style="
-    min-width: 100%;
-    margin: 25px 0px 10px 0px;
-    border-radius: 0px;
-    box-shadow: none;">
-      <ion-icon name="camera"></ion-icon>
-      <input type="file" (change)="uploadFile($event)" name="image" />
-    </label>
+        <form id="editProgram-form2" (ngSubmit)="uploadProgram()">
+          <ion-item id="editProgram-input6">
+            <ion-label stacked>
+              Program Name
+            </ion-label>
+            <ion-input type="text" [(ngModel)]="program.name" placeholder="" name="name"></ion-input>
+          </ion-item>
+          <label for="fileInput" icon-only ion-button style="
+          min-width: 100%;
+          margin: 25px 0px 10px 0px;
+          border-radius: 0px;
+          box-shadow: none;">
+          <ion-icon name="camera"></ion-icon>
+          <input type="file" (change)="uploadFile($event)" name="image" />
+        </label>
 
-    <ion-item id="editProgram-textarea2">
-      <ion-label stacked>
-        Program Description
-      </ion-label>
-      <ion-textarea placeholder="" [(ngModel)]="program.description" name="description"></ion-textarea>
-    </ion-item>
-    <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
-      Submit
-    </button>
-    </form>
+        <ion-item id="editProgram-textarea2">
+          <ion-label stacked>
+            Program Description
+          </ion-label>
+          <ion-textarea placeholder="" [(ngModel)]="program.description" name="description"></ion-textarea>
+        </ion-item>
+        <button id="editProgram-button4" ion-button outline color="positive" block type="submit">
+          Submit
+        </button>
+      </form>
     </ion-col>
   </ion-row>
 </ion-grid>

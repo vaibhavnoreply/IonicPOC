@@ -13,6 +13,11 @@ page-add-program {
 #page7 .item-md {
  padding: 0px;
 }
+
+#page8 .item-md {
+ padding: 0px;
+}
+
 #addProgram-button3 {
   margin-top: 30px;
 }
@@ -72,4 +77,27 @@ input[type="file"] {
   border-bottom-color: #cccccc59;
   -webkit-box-shadow: inset 0 -1px 0 0 #cccccc59;
   box-shadow: inset 0 -1px 0 0 #cccccc59;
+}
+
+.button-outline-md {
+    border-color: #2794dc;
+    color: #2794dc;
+}
+
+#programs-card21 .item-md.item-block .item-inner {
+  border-bottom: none;
+  border: none;
+  -webkit-box-shadow: inset 0 -1px 0 0 #fff !important;
+  box-shadow: inset 0 -1px 0 0 #fff !important;
+}
+
+#video-list2 .item-md.item-block .item-inner {
+  border-bottom: none;
+  border: none;
+  -webkit-box-shadow: inset 0 -1px 0 0 #fff !important;
+  box-shadow: inset 0 -1px 0 0 #fff !important;
+}
+
+#video-list2.list-md ion-item-sliding {
+  margin: 20px 0px;
 }

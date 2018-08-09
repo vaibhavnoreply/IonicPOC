@@ -16,9 +16,9 @@
 <ion-content padding id="page2">
   <ion-list id="video-list2">
     <ion-item-sliding *ngFor="let video of videoList | async">
-      <ion-item color="none" id="video-list-item18">
+      <ion-item color="none" id="video-list-item18" (click)="playVideo(video.url,video.title)">
         <ion-thumbnail item-left>
-          <img [src]="videoUrls[video.id]" (click)="playVideo(video.url)" onerror="src='assets/img/placeholder-image.png'" alt="no-image" />
+          <img [src]="videoUrls[video.id]" onerror="src='assets/img/placeholder-image.png'" alt="no-image" />
         </ion-thumbnail>
         <h2>
           {{video.title}}
@@ -27,7 +27,7 @@
           {{video.description}}
         </p>
       </ion-item>
-      <ion-item-options side="left">
+      <ion-item-options side="right">
         <button ion-button color="assertive" (click)="deleteVideo(video.id)">
           Delete
         </button>
