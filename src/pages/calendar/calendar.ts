@@ -4,9 +4,9 @@ import { AddEventModalComponent } from './add-event-modal/add-event-modal';
 import { AngularFireStorage } from 'angularfire2/storage';
 import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import moment from 'moment';
+import moment from 'moment'
 
-export interface EventData { id: string, title: string, notes: string; startTime: string; endTime: string; }
+export interface EventData { id: string, title: string, notes: string, startTime: string, endTime: string }
 
 @Component({
   selector: 'page-calendar',
@@ -37,25 +37,30 @@ export class CalendarPage {
     private modalCtrl: ModalController,
     public afStorage: AngularFireStorage,
     public afDatabase: AngularFirestore) {
-      const tempArray= [];
     this.eventCollection = afDatabase.collection<EventData>('events');
     this.eventList = this.eventCollection.valueChanges();
-    this.eventList.forEach(function(events) {
-      events.forEach(function(event) {
-        let tempStartTime = new Date(event.startTime);
-        let tempEndTime = new Date(event.endTime);
-        event.startTime = tempStartTime;
-        event.endTime = tempEndTime;
-        tempArray.push(event);
-      });
-    });
-    this.eventSource = tempArray;
+    this.loadEvents();
     // this.markDisabled(new Date(2017, 12, 25))
   }
 
   loadEvents() {
-    //this.eventSource = this.createRandomEvents();
+    this.eventSource = this.createRandomEvents();
   }
+
+  createRandomEvents(){
+    const tempArray= [];
+    this.eventList.forEach(function(events) {
+      events.forEach(function(event) {
+        let tempStartTime = moment(event.startTime);
+        let tempEndTime = moment(event.endTime);
+        event.startTime = tempStartTime._d;
+        event.endTime = tempEndTime._d;
+        tempArray.push(event);
+      });
+    });
+    return tempArray;
+  }
+
   onViewTitleChanged(title) {
     this.viewTitle = title;
   }

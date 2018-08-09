@@ -11,7 +11,7 @@ import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/fires
  * Components.
  */
 
-export interface EventData { id: string, title: string, notes: string; startTime: string; endTime: string; }
+export interface EventData { id: string, title: string, notes: string, startTime: string, endTime: string }
 
 @Component({
   selector: 'add-event-modal',

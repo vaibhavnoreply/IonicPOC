@@ -32,12 +32,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 // AF2 Settings
 export const firebaseConfig = {
-  apiKey: "AIzaSyCTn3hmLU6SmLZnpb9rsvqTokX8HVZoB7w",
-  authDomain: "sampleprojectfb.firebaseapp.com",
-  databaseURL: "https://sampleprojectfb.firebaseio.com",
-  storageBucket: "sampleprojectfb.appspot.com",
-  messagingSenderId: "1069592166373",
-  projectId: "sampleprojectfb"
+  apiKey: "AIzaSyCPgff4YugnbzwIa0mgGfsPpBHtgAMEdCA",
+  authDomain: "ionicsampleapp-2886f.firebaseapp.com",
+  databaseURL: "https://ionicsampleapp-2886f.firebaseio.com",
+  projectId: "ionicsampleapp-2886f",
+  storageBucket: "ionicsampleapp-2886f.appspot.com",
+  messagingSenderId: "130399096126"
 };
 
 @NgModule({
