@@ -20,6 +20,8 @@ export interface EventData { id: string, title: string, notes: string; startTime
 export class AddEventModalComponent {
 
   event = {
+    title:'',
+    notes:'',
     startTime: new Date().toISOString(),
     endTime: new Date().toISOString(),
     allDay: false,
