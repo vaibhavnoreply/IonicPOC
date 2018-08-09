@@ -40,11 +40,13 @@ export class VideoPage {
     this.navCtrl.push(AddVideoPage);
   }
 
-  playVideo(url) {
+  playVideo(url,title) {
     this.navCtrl.push(PlayVideoPage, {
-      data: url
+        url: url,
+        title:title
     });
   }
+
   deleteVideo(key) {
     this.videoCollection.doc(key).delete();
   }

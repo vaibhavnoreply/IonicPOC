@@ -36,5 +36,5 @@ export class ProgramDetailsPage {
     // switch back to the previous page
     this.navCtrl.pop();
   }
-  
+
 }

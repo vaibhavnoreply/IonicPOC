@@ -23,10 +23,15 @@ page-program-details {
 
 .item-md.item-block .item-inner {
     border-bottom: 1px solid #ccc;
-    border-bottom-color: #ccc !important;
+    border-bottom-color: #fff !important;
     box-shadow: inset 0 -1px 0 0 #ccc !important;
 }
 
 label.disable-hover.button.button-md.button-default.button-default-md{
   background-color: #2794dc;
+}
+
+.programDeatilShadow {
+  box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.20);
+  padding: 15px 15px;
 }
